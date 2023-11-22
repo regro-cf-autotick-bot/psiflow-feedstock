@@ -1,5 +1,5 @@
 {% set name = "psiflow" %}
-{% set version = "2.0.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/molmod/psiflow/archive/v{{ version }}.tar.gz
-  sha256: c6103905ecfe9ded67a1c52142424f184e50c24598998be931f25d5a13b6ae43
+  sha256: a8f6ad0903eb6dcef8518a0aff0493eaf8b4a340a922f0123f8972a49242d77d
 
 build:
   noarch: python
@@ -49,6 +49,7 @@ test:
     - mdtraj
     - openmm
     - openmm-ml
+    - colorcet
   commands:
     - pip check
     - psiflow-train-nequip --help
