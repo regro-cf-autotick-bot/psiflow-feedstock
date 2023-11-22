@@ -49,6 +49,7 @@ test:
     - mdtraj
     - openmm
     - openmm-ml
+    - colorcet
   commands:
     - pip check
     - psiflow-train-nequip --help
