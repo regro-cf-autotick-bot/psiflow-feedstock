@@ -1,5 +1,5 @@
 {% set name = "psiflow" %}
-{% set version = "3.0.1" %}
+{% set version = "3.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/molmod/psiflow/archive/v{{ version }}.tar.gz
-  sha256: f99501bd15100eee0e6ff283abcf547971bbe509e257c897d1b2d1bf5e6cb367
+  sha256: 4a7994deda562583ccc81922aae03ee22ec7f48169cd4a211969c3002cd181e0
 
 build:
   noarch: python
