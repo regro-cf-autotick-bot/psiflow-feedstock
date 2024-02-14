@@ -50,6 +50,7 @@ test:
     - openmm
     - openmm-ml
     - colorcet
+    - cp2k-input-tools 
   commands:
     - pip check
     - psiflow-train-nequip --help
