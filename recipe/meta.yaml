@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - psiflow-train-nequip = psiflow.models.train_nequip:main
     - psiflow-deploy-nequip = psiflow.models.deploy_nequip:main
