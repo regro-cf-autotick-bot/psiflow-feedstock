@@ -1,5 +1,5 @@
 {% set name = "psiflow" %}
-{% set version = "3.0.4" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/molmod/psiflow/archive/v{{ version }}.tar.gz
-  sha256: 5536258606c30ccad47499328df522bbaa5c2a2b3362711323b309e99e90aaa5
+  sha256: e09deb0c6bfea58bde808299f507d6f962d6ac3b4e4fe03b6c2598678f8d498e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   entry_points:
     - psiflow-train-nequip = psiflow.models.train_nequip:main
     - psiflow-deploy-nequip = psiflow.models.deploy_nequip:main
@@ -27,13 +27,17 @@ requirements:
     - python >=3.6
     - pip
   run:
+    - cp2k-input-tools @git+https://github.com/cp2k/cp2k-input-tools.git@3b9929735dcb3c8c0620a548b1fe20efecbad077
+    - prettytable
+    - psutil
+    - pytimeparse
     - python >=3.6
-    - ase >=3.22.1
+    - ase >=3.23.0
     - pyyaml >=6.0
-    - numpy >=1.22.3
+    - numpy >=1.22.3,<2
     - wandb >=0.14.0
     - pymatgen >=2023.3.23
-    - parsl ==2023.08.28
+    - parsl >=2024.12.16
 
 test:
   imports:
@@ -50,7 +54,7 @@ test:
     - openmm
     - openmm-ml
     - colorcet
-    - cp2k-input-tools 
+    - cp2k-input-tools
   commands:
     - pip check
     - psiflow-train-nequip --help
