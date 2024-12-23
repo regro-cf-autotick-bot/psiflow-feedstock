@@ -27,7 +27,7 @@ requirements:
     - python >=3.6
     - pip
   run:
-    - cp2k-input-tools @git+https://github.com/cp2k/cp2k-input-tools.git@3b9929735dcb3c8c0620a548b1fe20efecbad077
+    - cp2k-input-tools
     - prettytable
     - psutil
     - pytimeparse
